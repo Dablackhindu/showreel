@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Keshav Walcott | Showreel">
+<meta property="og:description" content="Unreal Engine developer and 3D artist. Real-time, virtual production, motion capture, reality capture and digital twins.">
+<meta property="og:image" content="https://dablackhindu.github.io/showreel/media/reel-open.jpg">
+<meta property="og:url" content="https://dablackhindu.github.io/showreel/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0c0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff5b45'/%3E%3C/svg%3E">
+<title>Keshav Walcott | Showreel</title>
+<meta name="description" content="Keshav Walcott — Unreal Engine developer and 3D artist. Real-time, virtual production, reality capture and digital twins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+  /* Single deliberate look: a darkened screening room. Painted explicitly so it holds on either host theme. */
+  :root{
+    --ground:#0b0c0e; --panel:#14161a; --line:#252930; --ink:#eeebe4; --mute:#8f949c; --dim:#5d626a;
+    --tally:#ff5b45;
+    --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+    --body:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    color-scheme:dark;
+  }
+  html{background:var(--ground)}
+  body{background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body);padding-inline:clamp(16px,4vw,48px);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin-inline:auto}
+  a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--dim)}
+  a:hover{text-decoration-color:var(--tally)}
+  :focus-visible{outline:2px solid var(--tally);outline-offset:3px}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+
+  /* top bar */
+  .bar{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;padding-block:20px;border-bottom:1px solid var(--line)}
+  .bar nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+  .bar nav a{text-decoration:none}
+  .bar nav a:hover{color:var(--ink)}
+  .tally{display:inline-flex;align-items:center;gap:8px}
+  .tally::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tally);box-shadow:0 0 10px var(--tally)}
+
+  /* hero */
+  .hero{padding-block:clamp(28px,5vw,56px) 20px;display:grid;grid-template-columns:1fr auto;gap:12px 32px;align-items:end}
+  h1{font:800 clamp(56px,11vw,148px)/.86 var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:0}
+  .role{margin:0;max-width:34ch;color:var(--mute);font-size:17px;text-wrap:balance}
+  .role strong{color:var(--ink);font-weight:500}
+  @media (max-width:760px){.hero{grid-template-columns:1fr}}
+
+  .screen{position:relative;background:#000;border:1px solid var(--line)}
+  .screen video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+  .slate{display:flex;flex-wrap:wrap;gap:6px 22px;padding-block:12px;border-bottom:1px solid var(--line)}
+
+  /* sections */
+  section{padding-block:clamp(48px,7vw,88px) 0}
+  .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px 40px;align-items:end;margin-bottom:28px}
+  h2{font:800 clamp(38px,6vw,72px)/.92 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
+  .head p{margin:0;color:var(--mute);max-width:60ch}
+  @media (max-width:760px){.head{grid-template-columns:1fr}}
+
+  /* clip tiles */
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+  @media (max-width:700px){.grid{grid-template-columns:1fr}}
+  figure{margin:0}
+  .clip{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);background:#000;cursor:zoom-in;overflow:hidden}
+  .clip video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .6s ease}
+  .clip:hover video{transform:scale(1.02)}
+  .clip .open{position:absolute;right:10px;bottom:10px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(11,12,14,.78);color:var(--ink);padding:7px 9px;opacity:0;transition:opacity .2s}
+  .clip:hover .open,.clip:focus-visible .open{opacity:1}
+  figcaption{display:grid;gap:4px;padding-top:12px}
+  figcaption b{font:600 17px/1.3 var(--body)}
+  figcaption span:last-child{color:var(--mute);font-size:15px}
+
+  /* scan-to-engine toggle */
+  .rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  @media (max-width:900px){.rooms{grid-template-columns:1fr}}
+  .room .stack{position:relative;border:1px solid var(--line);background:#000;aspect-ratio:16/9;overflow:hidden}
+  .room .stack video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
+  .room .stack video.final{opacity:0}
+  .room[data-view="final"] .stack video.final{opacity:1}
+  .room .stack video{transition:opacity .5s ease,transform .6s ease}
+  .room .stack .hint{position:absolute;right:10px;bottom:10px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(11,12,14,.78);color:var(--ink);padding:7px 9px;opacity:0;transition:opacity .2s;pointer-events:none}
+  @media (hover:hover){
+    .room .stack{cursor:crosshair}
+    .room .stack:hover video{transform:scale(1.02)}
+    .room[data-view="scan"] .stack:hover video.final{opacity:1}
+    .room[data-view="final"] .stack:hover video.final{opacity:0}
+    .room .stack:hover .hint{opacity:1}
+  }
+  .seg{display:inline-flex;border:1px solid var(--line);margin-top:12px}
+  .seg button{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--mute);border:0;padding:9px 12px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+  .room .cap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .room b{font:600 17px/1.3 var(--body)}
+
+  /* case study */
+  .case{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px 40px;align-items:start}
+  @media (max-width:900px){.case{grid-template-columns:1fr}}
+  .case video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+  .figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-block:20px}
+  .figs div{background:var(--ground);padding:14px 16px}
+  .figs strong{display:block;font:800 36px/1 var(--display);font-variant-numeric:tabular-nums}
+  .figs span{font-size:13px;color:var(--mute)}
+  .case p{margin:0 0 12px;max-width:60ch}
+  .case .note{color:var(--mute);font-size:15px}
+
+  /* credits + toolkit */
+  .cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}
+  @media (max-width:860px){.cols{grid-template-columns:1fr}}
+  .credits{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .credits li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:4px 16px;padding-block:14px;border-bottom:1px solid var(--line)}
+  .credits li p{margin:2px 0 0;color:var(--mute);font-size:15px}
+  @media (max-width:480px){.credits li{grid-template-columns:1fr}}
+  .kit{display:grid;gap:18px}
+  .kit h3{margin:0 0 6px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .kit p{margin:0}
+
+  footer{margin-top:clamp(56px,8vw,104px);padding-block:36px 48px;border-top:1px solid var(--line);display:grid;gap:18px}
+  footer .big{font:800 clamp(34px,6vw,64px)/.95 var(--display);text-transform:uppercase;margin:0}
+  footer .links{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:17px}
+
+
+  /* featured project */
+  .orbit{position:relative;border:1px solid var(--line);background:#000}
+  .orbit video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+  .tag{position:absolute;left:12px;bottom:12px;background:rgba(11,12,14,.8);padding:8px 10px}
+  .tag b{display:block;font:600 15px/1.2 var(--body);color:var(--ink);text-transform:none;letter-spacing:0}
+  .figs.wide{grid-template-columns:repeat(4,minmax(0,1fr));margin-block:24px 0}
+  .figs.wide strong{font-size:clamp(30px,4vw,44px)}
+  @media (max-width:700px){.figs.wide{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .subhead{font:800 clamp(28px,4vw,40px)/1 var(--display);text-transform:uppercase;margin:clamp(40px,6vw,64px) 0 20px}
+  .site{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start}
+  @media (max-width:900px){.site{grid-template-columns:1fr 1fr}.site .copy{grid-column:1/-1}}
+  @media (max-width:560px){.site{grid-template-columns:1fr}}
+  .site img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+  .site figcaption{padding-top:8px}
+  .copy p{margin:0 0 14px;max-width:58ch}
+  .copy ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .copy li{padding-block:10px;border-bottom:1px solid var(--line);color:var(--mute);font-size:15px}
+  .copy li b{color:var(--ink);font-weight:500}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.grid.three{grid-template-columns:1fr}}
+  .film video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+  .film .note{color:var(--mute);font-size:15px;margin:14px 0 0}
+  .chapters{display:flex;flex-wrap:wrap;border:1px solid var(--line);width:max-content;max-width:100%;margin-top:12px}
+  .chapters button{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--mute);border:0;padding:10px 14px;cursor:pointer}
+  .chapters button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+  .film-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+
+  /* AI pipeline */
+  .pipe{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:900px}
+  
+  @media (max-width:640px){.pipe{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .pipe li{display:grid;gap:8px;align-content:start;min-width:0}
+  .slot b,.slot span{overflow-wrap:anywhere;min-width:0}
+  .pipe li > img,.pipe .tri,.pipe .slot{aspect-ratio:3/4;width:100%;border:1px solid var(--line);background:var(--panel)}
+  .pipe li > img{display:block;height:auto;object-fit:cover}
+  .pipe li > img.sq{object-fit:contain;background:#1a1a1a}
+  .pipe .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+  .pipe .tri img{width:100%;height:100%;object-fit:cover;display:block}
+  .pipe li > b{font:600 16px/1.3 var(--body)}
+  .pipe li > span:last-child{color:var(--mute);font-size:14px}
+  .slot{display:grid;place-content:center;gap:4px;text-align:center;padding:12px;border:1px dashed var(--dim);background:repeating-linear-gradient(135deg,var(--panel) 0 10px,var(--ground) 10px 20px)}
+  .pipe .slot{border:1px dashed var(--dim);background:repeating-linear-gradient(135deg,var(--panel) 0 10px,var(--ground) 10px 20px)}
+  .slot b{font:600 14px/1.3 var(--body)}
+  .slot span:not(.mono){color:var(--mute);font-size:13px}
+  .slot.has{padding:0;border:1px solid var(--line);background:#1a1a1a;display:block}
+  .slot.has{margin:0;aspect-ratio:auto!important;border:0;background:none}
+  .slot.has img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:#1a1a1a;border:1px solid var(--line)}
+  .slot.has figcaption{padding-top:6px}
+  .quip{margin:4px 0 0;font-size:13px;line-height:1.4;color:var(--mute);font-style:italic}
+  .roster{display:grid;gap:28px}
+  .chef{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,3fr) minmax(0,1fr);gap:12px 18px;align-items:start;padding-top:18px;border-top:1px solid var(--line)}
+  .chef header{display:grid;gap:4px}
+  .chef header b{font:800 30px/1 var(--display);text-transform:uppercase}
+  .chef .ages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .chef .ages img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+  .chef .ages figcaption{padding-top:6px}
+  .chef .threed{display:grid;grid-template-columns:1fr;gap:8px}
+  .chef .threed .slot{aspect-ratio:3/4}
+  @media (max-width:900px){.chef{grid-template-columns:1fr}}
+
+  /* lightbox */
+  dialog{border:1px solid var(--line);background:#000;padding:0;width:min(1200px,calc(100vw - 32px));max-width:none;color:var(--ink)}
+  dialog::backdrop{background:rgba(5,6,7,.9)}
+  dialog video{display:block;width:100%;height:auto;max-height:80vh}
+  dialog .dbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;background:var(--panel)}
+  dialog button{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--ink);border:1px solid var(--line);padding:8px 12px;cursor:pointer}
+
+  @media (prefers-reduced-motion:reduce){.clip video,.room .stack video{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <span class="mono tally">Available — contract &amp; full-time</span>
+    <nav class="mono" aria-label="Sections">
+      <a href="#realtime">Real-time</a>
+      <a href="#capture">Scan to engine</a>
+      <a href="#twin">Casepak</a>
+      <a href="#credits">Credits</a>
+      <a href="#ai">AI pipeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Keshav<br>Walcott</h1>
+    <p class="role"><strong>Unreal Engine developer &amp; 3D artist.</strong> Real-time environments, virtual production, motion capture and scan-accurate digital twins. London &amp; Brighton.</p>
+  </div>
+
+  <div class="screen">
+    <video id="reel" controls playsinline preload="metadata" poster="media/reel-open.jpg">
+      <source src="media/showreel.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="slate mono">
+    <span>Showreel 2026</span><span>01:11</span><span>1080p · sound on</span><span>UE5 · Houdini · Vicon · Aximmetry</span>
+  </div>
+
+  <section id="realtime">
+    <div class="head">
+      <h2>Real-time &amp; virtual production</h2>
+      <p>From LED volume stages to Vicon capture, all driven live in Unreal. Performances captured on the stage, then retargeted, lit and rendered in engine.</p>
+    </div>
+    <div class="grid">
+      <figure>
+        <button class="clip" data-src="media/led.mp4" data-title="LED volume stage" aria-label="Open LED volume stage clip">
+          <video muted loop playsinline preload="none" poster="media/led.jpg" data-auto><source src="media/led.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">On set · LED volume · Unreal Engine</span><b>LED volume stage</b><span>Talent working inside a real-time Unreal environment on an LED wall, with the floor and wall content rendered live.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/kai.mp4" data-title="Kai — performance sequence" aria-label="Open Kai performance sequence">
+          <video muted loop playsinline preload="none" poster="media/kai.jpg" data-auto><source src="media/kai.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">UE5 · Sequencer · mocap · 00:26</span><b>Kai — performance sequence</b><span>A dance performance captured in mocap and staged in a stylised Unreal set, with emissive floor tiles and portal transitions.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/mocapfx.mp4" data-title="Performance to particles" aria-label="Open performance to particles clip">
+          <video muted loop playsinline preload="none" poster="media/mocapfx.jpg" data-auto><source src="media/mocapfx.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">Vicon · Niagara · green screen ref</span><b>Performance to particles</b><span>Green-screen reference shown beside the same captured performance driving a particle-shedding character in engine.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/turbo.mp4" data-title="Motion capture — Vicon × Unreal" aria-label="Open Vicon to Unreal motion capture clip">
+          <video muted loop playsinline preload="none" poster="media/turbo.jpg" data-auto><source src="media/turbo.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">Vicon · Shogun · retarget · UE5</span><b>Motion capture — Vicon × Unreal</b><span>Captured and cleaned up in Shogun, then retargeted onto a character in Unreal.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="capture">
+    <div class="head">
+      <h2>Scan to engine</h2>
+      <p>A London townhouse captured with LiDAR and Gaussian splatting, then rebuilt in Unreal. Hover over a room, or use its switch, to swap between the raw scan and the final render.</p>
+    </div>
+    <div class="rooms">
+      <div class="room" data-view="scan">
+        <div class="stack">
+          <video class="scan" muted loop playsinline preload="none" poster="media/kx-ground-pc.jpg" data-auto><source src="media/kx-ground-pc.mp4" type="video/mp4"></video>
+          <video class="final" muted loop playsinline preload="none" poster="media/kx-ground.jpg" data-auto><source src="media/kx-ground.mp4" type="video/mp4"></video>
+          <span class="hint">Scan ⇄ Unreal</span>
+        </div>
+        <div class="cap"><b>Ground floor</b><span class="seg" role="group" aria-label="Ground floor view"><button aria-pressed="true" data-v="scan">Scan</button><button aria-pressed="false" data-v="final">Unreal</button></span></div>
+      </div>
+      <div class="room" data-view="scan">
+        <div class="stack">
+          <video class="scan" muted loop playsinline preload="none" poster="media/kx-basement-kitchen-pc.jpg" data-auto><source src="media/kx-basement-kitchen-pc.mp4" type="video/mp4"></video>
+          <video class="final" muted loop playsinline preload="none" poster="media/kx-basement-kitchen.jpg" data-auto><source src="media/kx-basement-kitchen.mp4" type="video/mp4"></video>
+          <span class="hint">Scan ⇄ Unreal</span>
+        </div>
+        <div class="cap"><b>Basement kitchen</b><span class="seg" role="group" aria-label="Basement kitchen view"><button aria-pressed="true" data-v="scan">Scan</button><button aria-pressed="false" data-v="final">Unreal</button></span></div>
+      </div>
+      <div class="room" data-view="scan">
+        <div class="stack">
+          <video class="scan" muted loop playsinline preload="none" poster="media/kx-2nd-pc.jpg" data-auto><source src="media/kx-2nd-pc.mp4" type="video/mp4"></video>
+          <video class="final" muted loop playsinline preload="none" poster="media/kx-2nd.jpg" data-auto><source src="media/kx-2nd.mp4" type="video/mp4"></video>
+          <span class="hint">Scan ⇄ Unreal</span>
+        </div>
+        <div class="cap"><b>Second floor</b><span class="seg" role="group" aria-label="Second floor view"><button aria-pressed="true" data-v="scan">Scan</button><button aria-pressed="false" data-v="final">Unreal</button></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="twin">
+    <div class="head">
+      <h2>Featured project: Casepak digital twin</h2>
+      <p>A working recycling plant, captured from the air and rebuilt in Unreal Engine. I flew the indoor drone capture through the live facility and turned it into survey-grade data. I then built the interactive twin and presented the film that went out on social.</p>
+    </div>
+
+    <div class="orbit">
+      <video muted loop playsinline preload="none" poster="media/drone-nrt-max.jpg" data-auto><source src="media/drone-nrt-max.mp4" type="video/mp4"></video>
+      <span class="tag mono">Drone orbit · flown by me · 4K50 source<b>NRT Max optical sorter</b></span>
+    </div>
+    <div class="figs wide">
+      <div><strong>200k+</strong><span>photogrammetry images processed</span></div>
+      <div><strong>Sub-mm</strong><span>survey-grade point cloud accuracy</span></div>
+      <div><strong>60+ fps</strong><span>at 4K in Unreal Engine</span></div>
+      <div><strong>~£10k/yr</strong><span>client-confirmed operational saving</span></div>
+    </div>
+
+    <h3 class="subhead">On site</h3>
+    <div class="site">
+      <figure>
+        <img src="media/onsite-drone.jpg" alt="Keshav in hard hat and hi-vis on a gantry, holding a drone controller above a moving conveyor" width="1050" height="1400" loading="lazy">
+        <figcaption><span class="mono">Flying from the gantry</span></figcaption>
+      </figure>
+      <figure>
+        <img src="media/onsite-walkway.jpg" alt="Keshav smiling on a yellow-railed walkway beside a large blue sorting machine" width="1400" height="1050" loading="lazy">
+        <figcaption><span class="mono">Walking the line before a flight</span></figcaption>
+      </figure>
+      <div class="copy">
+        <p>This wasn't an empty warehouse. I planned and flew every aerial shot indoors, between steel gantries, overhead ducting, safety netting and moving conveyors, while the plant was running.</p>
+        <ul>
+          <li><b>Aerial and ground capture</b>: drone orbits and passes, plus ground-level photogrammetry</li>
+          <li><b>One capture, two uses</b>: the same footage fed the 3D rebuild and was cut into the explainer videos inside the twin</li>
+          <li><b>Site safety</b>: full PPE, working around live plant alongside the site team</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subhead">From the air</h3>
+    <div class="grid three">
+      <figure>
+        <button class="clip" data-src="media/drone-nrt-5.mp4" data-title="NRT optical sorter" aria-label="Open NRT optical sorter drone clip">
+          <video muted loop playsinline preload="none" poster="media/drone-nrt-5.jpg" data-auto><source src="media/drone-nrt-5.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">Drone · low pass</span><b>NRT optical sorter</b><span>Flown low over the belt as material comes off the sorter.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/drone-balers.mp4" data-title="Balers: Twin and Mega" aria-label="Open balers drone clip">
+          <video muted loop playsinline preload="none" poster="media/drone-balers.jpg" data-auto><source src="media/drone-balers.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">Drone · top-down</span><b>Balers: Twin and Mega</b><span>Looking straight down on the baling line.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/drone-zac.mp4" data-title="ZAC system" aria-label="Open ZAC system drone clip">
+          <video muted loop playsinline preload="none" poster="media/drone-zac.jpg" data-auto><source src="media/drone-zac.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">Drone · orbit</span><b>ZAC system</b><span>An orbit around the ZAC system on the sorting line.</span></figcaption>
+      </figure>
+    </div>
+
+    <h3 class="subhead">The twin</h3>
+    <div class="case">
+      <div>
+        <video controls playsinline preload="metadata" poster="media/casepak.jpg"><source src="media/casepak.mp4" type="video/mp4"></video>
+        <p class="mono" style="margin-top:10px">Twin teaser · 00:35 · sound on</p>
+      </div>
+      <div>
+        <p>Drone and ground capture became survey-grade point cloud and mesh data, which I rebuilt as a real-time Unreal environment that runs in the browser. Each machine has a clickable hotspot that opens its specs, maintenance data and a short video cut from the aerial footage.</p>
+        <p class="note">Blueprint UI and hotspot systems · Gaussian splatting · RealityCapture · live data over APIs and WebSockets · Pixel Streaming 2 for cloud delivery · published as a public case study by Volinga.</p>
+        <p class="note">The client confirmed savings of about £10,000 a year. The twin replaced staffed onboarding and school visits, and cut the engineering callouts needed for routine measurements.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">The film</h3>
+    <div class="film">
+      <video id="film" controls playsinline preload="metadata" poster="media/film.jpg"><source src="media/film-1.mp4" type="video/mp4"></video>
+      <div class="film-meta">
+        <span class="chapters" role="group" aria-label="Film part">
+          <button aria-pressed="true" data-part="1">Part 1 · 0:00–3:00</button>
+          <button aria-pressed="false" data-part="2">Part 2 · 3:00–6:01</button>
+        </span>
+        <span class="mono">06:01 · sound on · plays straight through</span>
+      </div>
+      <p class="note" style="max-width:70ch">A 6-minute explainer that I produced and presented, filmed inside the facility. It walks through how the plant turns household recycling into material that can be sold. After it gained traction on LinkedIn, Recycle Now asked to use the content on their own channels.</p>
+    </div>
+  </section>
+
+  <section id="credits">
+    <div class="head">
+      <h2>Credits</h2>
+      <p>Four years in industry since 2022, after a BSc (Hons) in 3D VFX from Escape Studios.</p>
+    </div>
+    <div class="cols">
+      <ul class="credits">
+        <li><span class="mono">2023–now</span><div><b>Butoh: The Dance of Death</b><p>Virtual production director. The piece was funded with £20,000 from the HI3 Network and shot as a single continuous take with three Butoh performers.</p></div></li>
+        <li><span class="mono">2025</span><div><b>Live virtual broadcast: Diageo, Renault, Amazon</b><p>Aximmetry operator at GDS Studio. I composited Unreal scenes live with camera sources and cut between sources, including in Dual Engine setups.</p></div></li>
+        <li><span class="mono">2024–25</span><div><b>Rats Comedy, West End</b><p>Live stream engineer. Built a system that put online viewers' comments on the stage screen in real time.</p></div></li>
+        <li><span class="mono">2023–24</span><div><b>University of the Arts London</b><p>VFX specialist technician. Taught Houdini and ran Vicon motion capture sessions and Shogun post-processing.</p></div></li>
+        <li><span class="mono">2022–23</span><div><b>Outernet Global</b><p>XR consultant to the chief creative officer, advising on content for large immersive screen environments.</p></div></li>
+        <li><span class="mono">2022</span><div><b>Samsung Christmas commercial</b><p>3D artist at Selected Works. Cleaned up LiDAR-captured assets and set up Houdini lighting and simulation.</p></div></li>
+      </ul>
+      <div class="kit">
+        <div><h3>Engine</h3><p>Unreal Engine 5: Blueprints, Niagara, Sequencer, Movie Render Queue, Pixel Streaming, performance optimisation</p></div>
+        <div><h3>Capture</h3><p>Vicon &amp; Shogun, Mo-Sys tracking, LiDAR, photogrammetry, Gaussian splatting, RealityCapture, XGRIDS, Volinga</p></div>
+        <div><h3>3D &amp; FX</h3><p>Houdini (pyro, RBD, particles), Maya, Nuke, Octane, Redshift; sculpting, retopology, texturing</p></div>
+        <div><h3>Live &amp; broadcast</h3><p>Aximmetry (incl. Dual Engine), Disguise, OBS, NDI, SRT, RTMP</p></div>
+        <div><h3>Code &amp; pipeline</h3><p>Python, JavaScript/Node, WebSockets, MCP tooling for Unreal, Git/Perforce, ffmpeg</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai">
+    <div class="head">
+      <h2>AI character pipeline</h2>
+      <p><b>Dashi Dodge</b> is an original mobile endless-runner in Unreal Engine 5.8. It has five chefs, each drawn at three ages. I generated each character as a 2D plate, locking identity across ages with image references. The approved plates then go through turnaround, 3D, rigging and into Unreal as playable characters.</p>
+    </div>
+
+    <ol class="pipe" aria-label="Samurai Chef, from 2D plate to running in Unreal">
+      <li><span class="mono">Step 1 · 2D plate</span><img src="media/dashi/samuraichef_adult.jpg" alt="Samurai Chef, approved 2D character plate" width="540" height="720" loading="lazy"><b>Approved plate</b><span>This plate set the roster standard for proportion, palette and eyes.</span></li>
+      <li><span class="mono">Step 2 · Turnaround</span><div class="tri"><img src="media/dashi/samurai-tpose-front.jpg" alt="Turnaround, front" width="540" height="720" loading="lazy"><img src="media/dashi/samurai-tpose-side.jpg" alt="Turnaround, side" width="540" height="720" loading="lazy"><img src="media/dashi/samurai-tpose-back.jpg" alt="Turnaround, back" width="540" height="720" loading="lazy"></div><b>Front, side, back</b><span>The same pose from three angles, used as input for multi-image 3D.</span></li>
+      <li><span class="mono">Step 3 · 3D model</span><img class="sq" src="media/dashi/samurai-meshy-views.jpg" alt="Generated 3D model shown from four views" width="900" height="957" loading="lazy"><b>Textured mesh</b><span>Generated with Meshy, then remeshed to a game budget with a 1k packed-ORM texture set.</span></li>
+    </ol>
+
+    <h3 class="subhead">The roster: five chefs, three ages</h3>
+    <div class="roster">
+      <article class="chef">
+        <header><b>Samurai Chef</b><span class="mono">Near-miss specialist</span></header>
+        <div class="ages"><figure><img src="media/dashi/samuraichef_young.jpg" alt="Samurai Chef, young" width="540" height="720" loading="lazy"><figcaption class="mono">Young</figcaption></figure><figure><img src="media/dashi/samuraichef_adult.jpg" alt="Samurai Chef, adult" width="540" height="720" loading="lazy"><figcaption class="mono">Adult</figcaption></figure><figure><img src="media/dashi/samuraichef_old.jpg" alt="Samurai Chef, old" width="540" height="720" loading="lazy"><figcaption class="mono">Old</figcaption><p class="quip">The sword droops a little these days. It happens to the best of us.</p></figure></div>
+        <div class="threed"><figure class="slot has"><img src="media/dashi/samurai-meshy-views.jpg" alt="Samurai Chef 3D model" width="900" height="957" loading="lazy"><figcaption class="mono">3D model</figcaption></figure></div>
+      </article>
+      <article class="chef">
+        <header><b>Sushi Chef</b><span class="mono">Balanced baseline</span></header>
+        <div class="ages"><figure><img src="media/dashi/sushichef_young.jpg" alt="Sushi Chef, young" width="540" height="720" loading="lazy"><figcaption class="mono">Young</figcaption></figure><figure><img src="media/dashi/sushichef_adult.jpg" alt="Sushi Chef, adult" width="540" height="720" loading="lazy"><figcaption class="mono">Adult</figcaption></figure><figure><img src="media/dashi/sushichef_old.jpg" alt="Sushi Chef, old" width="540" height="720" loading="lazy"><figcaption class="mono">Old</figcaption></figure></div>
+      </article>
+      <article class="chef">
+        <header><b>Ramen Master</b><span class="mono">Peaks with age</span></header>
+        <div class="ages"><figure><img src="media/dashi/ramenmaster_young.jpg" alt="Ramen Master, young" width="540" height="720" loading="lazy"><figcaption class="mono">Young</figcaption></figure><figure><img src="media/dashi/ramenmaster_adult.jpg" alt="Ramen Master, adult" width="540" height="720" loading="lazy"><figcaption class="mono">Adult</figcaption></figure><figure><img src="media/dashi/ramenmaster_old.jpg" alt="Ramen Master, old" width="540" height="720" loading="lazy"><figcaption class="mono">Old</figcaption></figure></div>
+      </article>
+      <article class="chef">
+        <header><b>Salaryman</b><span class="mono">Peaks young</span></header>
+        <div class="ages"><figure><img src="media/dashi/salaryman_young.jpg" alt="Salaryman, young" width="540" height="720" loading="lazy"><figcaption class="mono">Young</figcaption></figure><figure><img src="media/dashi/salaryman_adult.jpg" alt="Salaryman, adult" width="540" height="720" loading="lazy"><figcaption class="mono">Adult</figcaption></figure><figure><img src="media/dashi/salaryman_old.jpg" alt="Salaryman, old" width="540" height="720" loading="lazy"><figcaption class="mono">Old</figcaption></figure></div>
+      </article>
+      <article class="chef">
+        <header><b>Cat Mascot</b><span class="mono">Nine lives</span></header>
+        <div class="ages"><figure><img src="media/dashi/catmascot_young.jpg" alt="Cat Mascot, young" width="540" height="720" loading="lazy"><figcaption class="mono">Young</figcaption></figure><figure><img src="media/dashi/catmascot_adult.jpg" alt="Cat Mascot, adult" width="540" height="720" loading="lazy"><figcaption class="mono">Adult</figcaption></figure><figure><img src="media/dashi/catmascot_old.jpg" alt="Cat Mascot, old" width="540" height="720" loading="lazy"><figcaption class="mono">Old</figcaption></figure></div>
+      </article>
+    </div>
+    <p class="mono" style="margin-top:18px">Tools: Higgsfield (FLUX.2) for plates and turnarounds · Meshy for multi-image 3D, remeshing and rigging · Unreal Engine 5.8 · Claude Code with unreal-mcp for editor automation</p>
+  </section>
+
+  <footer id="contact">
+    <p class="big">Let's build something real-time.</p>
+    <div class="links">
+      <a href="mailto:kwalcott48@gmail.com">kwalcott48@gmail.com</a>
+      <a href="https://www.linkedin.com/in/keshavwalcott" target="_blank" rel="noopener">linkedin.com/in/keshavwalcott</a>
+    </div>
+    <span class="mono">London &amp; Brighton · on-site, hybrid or remote</span>
+  </footer>
+</div>
+
+<dialog id="lb" aria-label="Clip viewer">
+  <div class="dbar"><span class="mono" id="lbt"></span><button id="lbx">Close</button></div>
+  <video id="lbv" controls playsinline></video>
+</dialog>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var autos = [].slice.call(document.querySelectorAll('video[data-auto]'));
+
+  // Loops play only while on screen (and never under reduced motion); posters carry the page at rest.
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else v.pause();
+      });
+    }, {threshold: 0.35});
+    autos.forEach(function(v){ io.observe(v); });
+  }
+
+  // Scan / Unreal toggles
+  document.querySelectorAll('.room').forEach(function(room){
+    room.querySelectorAll('.seg button').forEach(function(b){
+      b.addEventListener('click', function(){
+        room.dataset.view = b.dataset.v;
+        room.querySelectorAll('.seg button').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+        var v = room.querySelector('video.' + b.dataset.v);
+        v.preload = 'auto'; try { v.currentTime = 0; } catch(e){}
+        var p = v.play(); if (p && p.catch) p.catch(function(){});
+      });
+    });
+  });
+
+  // Lightbox
+  var lb = document.getElementById('lb'), lbv = document.getElementById('lbv'), lbt = document.getElementById('lbt');
+  var reel = document.getElementById('reel');
+  function close(){ lbv.pause(); lbv.removeAttribute('src'); lbv.load(); if (lb.open) lb.close(); }
+  document.querySelectorAll('.clip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (!lb.showModal) { window.open(btn.dataset.src, '_blank'); return; }
+      reel.pause();
+      lbt.textContent = btn.dataset.title;
+      lbv.src = btn.dataset.src; lbv.loop = true;
+      lb.showModal();
+      var p = lbv.play(); if (p && p.catch) p.catch(function(){});
+    });
+  });
+
+  // Casepak film: two encoded halves played as one piece.
+  var film = document.getElementById('film'), part = 1;
+  var cbtns = document.querySelectorAll('.chapters button');
+  function setPart(n, autoplay){
+    part = n; film.src = 'media/film-' + n + '.mp4';
+    cbtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.part == n)); });
+    if (autoplay) { var p = film.play(); if (p && p.catch) p.catch(function(){}); }
+  }
+  cbtns.forEach(function(b){ b.addEventListener('click', function(){ reel.pause(); setPart(+b.dataset.part, true); }); });
+  film.addEventListener('ended', function(){ if (part === 1) setPart(2, true); });
+  film.addEventListener('play', function(){ reel.pause(); });
+  reel.addEventListener('play', function(){ film.pause(); });
+  document.getElementById('lbx').addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  lb.addEventListener('close', function(){ lbv.pause(); });
+})();
+</script>
+</body>
+</html>
