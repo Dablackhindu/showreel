@@ -192,7 +192,20 @@
   dialog .dbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;background:var(--panel)}
   dialog button{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--ink);border:1px solid var(--line);padding:8px 12px;cursor:pointer}
 
-  @media (prefers-reduced-motion:reduce){.clip video,.room .stack video{transition:none}}
+  /* YouTube embed: local poster until clicked, then the player loads */
+  .yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid var(--line);background:#000;cursor:pointer;overflow:hidden}
+  .yt img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .yt:hover img{transform:scale(1.02)}
+  .yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:rgba(11,12,14,.82);color:var(--ink);padding:14px 18px;border:1px solid var(--line)}
+  .yt .play::before{content:"";width:0;height:0;border-left:11px solid var(--tally);border-top:7px solid transparent;border-bottom:7px solid transparent}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .feature{margin-bottom:36px}
+  .feature figcaption{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:4px 24px}
+  .feature figcaption > *{grid-column:1}
+  .feature figcaption a{grid-column:2;grid-row:1/span 3}
+  .feature figcaption span:not(.mono){color:var(--mute);font-size:15px}
+
+  @media (prefers-reduced-motion:reduce){.clip video,.room .stack video,.yt img{transition:none}}
 </style>
 
 </head>
@@ -229,6 +242,13 @@
       <h2>Real-time &amp; virtual production</h2>
       <p>From LED volume stages to Vicon capture, all driven live in Unreal. Performances captured on the stage, then retargeted, lit and rendered in engine.</p>
     </div>
+    <figure class="feature">
+      <button class="yt" data-yt="xp-aqLwQ-X4" aria-label="Play Black Eyed Peas, El Alfa ft. Becky G, TONIGHT (Bad Boys: Ride or Die), official music video">
+        <img src="media/bep-tonight.jpg" alt="" width="1280" height="720" loading="lazy">
+        <span class="play">Play music video</span>
+      </button>
+      <figcaption><span class="mono">Official music video · Bad Boys: Ride or Die soundtrack · 2024</span><b>Black Eyed Peas, El Alfa ft. Becky G — TONIGHT</b><span>The lead single from the <i>Bad Boys: Ride or Die</i> soundtrack.</span><a class="mono" href="https://www.youtube.com/watch?v=xp-aqLwQ-X4" target="_blank" rel="noopener">Watch on YouTube ↗</a></figcaption>
+    </figure>
     <div class="grid">
       <figure>
         <button class="clip" data-src="media/led.mp4" data-title="LED volume stage" aria-label="Open LED volume stage clip">
@@ -419,6 +439,39 @@
       <li><span class="mono">Step 3 · 3D model</span><img class="sq" src="media/dashi/samurai-meshy-views.jpg" alt="Generated 3D model shown from four views" width="900" height="957" loading="lazy"><b>Textured mesh</b><span>Generated with Meshy, then remeshed to a game budget with a 1k packed-ORM texture set.</span></li>
     </ol>
 
+    <h3 class="subhead">Step 4 · Animated in Unreal</h3>
+    <p style="margin:-8px 0 20px;color:var(--mute);max-width:70ch">Screen captures from the Unreal animation editor, recorded straight off the editor with no camera or render setup, so you see the working tool. This is the rigged Samurai Chef running his gameplay cycles.</p>
+    <div class="grid">
+      <figure>
+        <button class="clip" data-src="media/dashi/anim-run.mp4" data-title="Samurai Chef · Run cycle" aria-label="Open Samurai Chef run cycle">
+          <video muted loop playsinline preload="none" poster="media/dashi/anim-run.jpg" data-auto><source src="media/dashi/anim-run.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">UE 5.8 · animation editor · screen capture</span><b>Run</b><span>The main gameplay loop, running on the rig in Unreal.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/dashi/anim-jump.mp4" data-title="Samurai Chef · Jump" aria-label="Open Samurai Chef jump">
+          <video muted loop playsinline preload="none" poster="media/dashi/anim-jump.jpg" data-auto><source src="media/dashi/anim-jump.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">UE 5.8 · animation editor · screen capture</span><b>Jump</b><span>The standard jump used to clear low obstacles.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/dashi/anim-jumpover.mp4" data-title="Samurai Chef · Jump over" aria-label="Open Samurai Chef jump over">
+          <video muted loop playsinline preload="none" poster="media/dashi/anim-jumpover.jpg" data-auto><source src="media/dashi/anim-jumpover.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">UE 5.8 · animation editor · screen capture</span><b>Jump over</b><span>A vault over taller obstacles.</span></figcaption>
+      </figure>
+      <figure>
+        <button class="clip" data-src="media/dashi/anim-jumpover1.mp4" data-title="Samurai Chef · Jump over (alt)" aria-label="Open Samurai Chef alternate jump over">
+          <video muted loop playsinline preload="none" poster="media/dashi/anim-jumpover1.jpg" data-auto><source src="media/dashi/anim-jumpover1.mp4" type="video/mp4"></video>
+          <span class="open">Expand</span>
+        </button>
+        <figcaption><span class="mono">UE 5.8 · animation editor · screen capture</span><b>Jump over, alternate</b><span>A second vault variant, so repeated obstacles don't look the same every time.</span></figcaption>
+      </figure>
+    </div>
+
     <h3 class="subhead">The roster: five chefs, three ages</h3>
     <div class="roster">
       <article class="chef">
@@ -521,6 +574,20 @@
   document.getElementById('lbx').addEventListener('click', close);
   lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
   lb.addEventListener('close', function(){ lbv.pause(); });
+
+  // YouTube: swap the local poster for the player only on click (no third-party load before that).
+  document.querySelectorAll('.yt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      reel.pause(); film.pause();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('aria-label');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      var d = document.createElement('div'); d.className = 'yt'; d.appendChild(f);
+      btn.replaceWith(d);
+    });
+  });
 })();
 </script>
 </body>
