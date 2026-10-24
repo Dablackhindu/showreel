@@ -215,6 +215,15 @@
   .spec .src img{background:#fff}
   img.wide{display:block;width:100%;height:auto;border:1px solid var(--line)}
 
+  /* Social & promo (vertical) */
+  .vert{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px 40px;align-items:start}
+  @media (max-width:700px){.vert{grid-template-columns:1fr}.vert video{max-width:360px}}
+  .vert video{display:block;width:100%;aspect-ratio:9/16;height:auto;background:#000;border:1px solid var(--line)}
+  .vert b{display:block;font-size:22px;margin:8px 0 10px}
+  .vert p{color:var(--mute);margin:0 0 14px;max-width:60ch}
+  .vert ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .vert li{padding-block:10px;border-bottom:1px solid var(--line);color:var(--mute);font-size:15px}
+
   @media (prefers-reduced-motion:reduce){.clip video,.room .stack video,.yt img{transition:none}}
 </style>
 
@@ -225,6 +234,7 @@
   <header class="bar">
     <span class="mono tally">Available — contract &amp; full-time</span>
     <nav class="mono" aria-label="Sections">
+      <a href="#social">Social</a>
       <a href="#realtime">Real-time</a>
       <a href="#capture">Scan to engine</a>
       <a href="#twin">Casepak</a>
@@ -248,6 +258,27 @@
   <div class="slate mono">
     <span>Showreel 2026</span><span>01:11</span><span>1080p · sound on</span><span>UE5 · Houdini · Vicon · Aximmetry</span>
   </div>
+
+  <section id="social">
+    <div class="head">
+      <h2>Social &amp; promo</h2>
+      <p>Vertical-first video for social, made end to end: shot, directed, edited and finished with VFX.</p>
+    </div>
+    <div class="vert">
+      <video controls playsinline preload="metadata" poster="media/mak10.jpg"><source src="media/mak10.mp4" type="video/mp4"></video>
+      <div>
+        <span class="mono">Shot, directed, edited &amp; VFX by me · 9:16 · 00:52 · 2025</span>
+        <b>MAK 10 &amp; Friends at Ministry of Sound</b>
+        <p>A vertical promo for DJ MAK 10's night at Ministry of Sound, made to drive sign-ups on social. MAK 10 takes off outside an East London pub, flies across the city and lands in a street that breaks apart around him as he delivers the call to action.</p>
+        <ul>
+          <li><b style="display:inline;font-size:inherit;margin:0;color:var(--ink)">Shoot</b>: camera, lighting and sound on location in London</li>
+          <li><b style="display:inline;font-size:inherit;margin:0;color:var(--ink)">Direction</b>: directed MAK 10's to-camera delivery and performance</li>
+          <li><b style="display:inline;font-size:inherit;margin:0;color:var(--ink)">Edit</b>: cut, captions, grade and sound for 9:16</li>
+          <li><b style="display:inline;font-size:inherit;margin:0;color:var(--ink)">VFX</b>: the flight shot and the city breaking apart</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section id="realtime">
     <div class="head">
@@ -425,6 +456,7 @@
         <li><span class="mono">2023–now</span><div><b>Butoh: The Dance of Death</b><p>Virtual production director. The piece was funded with £20,000 from the HI3 Network and shot as a single continuous take with three Butoh performers.</p></div></li>
         <li><span class="mono">2025</span><div><b>Live virtual broadcast: Diageo, Renault, Amazon</b><p>Aximmetry operator at GDS Studio. I composited Unreal scenes live with camera sources and cut between sources, including in Dual Engine setups.</p></div></li>
         <li><span class="mono">2024–25</span><div><b>Rats Comedy, West End</b><p>Live stream engineer. Built a system that put online viewers' comments on the stage screen in real time.</p></div></li>
+        <li><span class="mono">2025</span><div><b>MAK 10 &amp; Friends, Ministry of Sound</b><p>Shot, directed, edited and VFX on a vertical social promo for the club night.</p></div></li>
         <li><span class="mono">2024</span><div><b>Black Eyed Peas — TONIGHT (Bad Boys: Ride or Die)</b><p>Matchmove supervisor and VAD (virtual art department) on the official music video.</p></div></li>
         <li><span class="mono">2023–24</span><div><b>University of the Arts London</b><p>VFX specialist technician. Taught Houdini and ran Vicon motion capture sessions and Shogun post-processing.</p></div></li>
         <li><span class="mono">2022–23</span><div><b>Outernet Global</b><p>XR consultant to the chief creative officer, advising on content for large immersive screen environments.</p></div></li>
